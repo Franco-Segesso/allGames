@@ -1,0 +1,414 @@
+html{
+    font-size: 16px;
+}
+body{
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #f5f6fa;
+    color: #2d3a4a;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+    font-size: 200%;
+    font-family: "Bebas Neue", sans-serif;
+}
+h2{
+    margin:0;
+    padding:0;
+}
+h4{
+    margin:0;
+}
+
+
+main{
+    flex: 1 0 auto;
+    min-height: 60vh;
+    background: #f5f6fa;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0 auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+main h1, main h2{
+    color: #2d3a4a;
+    
+    font-family: "Bebas Neue", sans-serif;
+    
+}
+
+main p {
+    color: #6c7a89;
+    font-size: 1.1rem;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+
+header{
+    background: #2d3a4a;
+    box-shadow: 0 2px 8px rgba(45,58,74,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Para que quede por encima del resto */
+    margin: 0;
+    padding: 0.3rem 0;
+    
+
+}
+.headerContainer{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr ; /* Ajusta según tus elementos: logo, nav, menú */
+    align-items: center;
+    background: transparent;
+    position: sticky;
+    top: 0px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.3 1rem;
+    
+}
+.titulo{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    text-align: center;
+    font-size: 2.3rem;
+    letter-spacing: 3px;
+    font-family: "Bebas Neue", sans-serif;
+    color: #4a90e2;
+    margin: 0;
+    margin-bottom: 0.7rem;
+    text-shadow:
+        0 2px 8px rgba(74,144,226,0.10),
+        0 1px 0 #fff,
+        0 0 10px #4a90e2;
+    background: linear-gradient(90deg, #7b2ff2 0%, #4a90e2 50%, #f357a8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.menu{
+    background-color: transparent;
+    padding: 0.3rem;
+}
+.nav{
+    height: auto;
+    margin-right: 0;
+    
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li{
+    
+    margin: 0 10px;
+    
+}
+nav ul li a{
+    display: inline-block; 
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-family: "Bebas Neue", sans-serif;
+    padding: 0.3 rem 1rem;
+    
+    
+}
+nav ul li a:hover{
+    
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.logo{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+    justify-self: start;
+    align-self: center;
+    height: 60px;
+    margin-left: 16px;
+    display: flex;
+    
+    
+    
+}
+.logo img{
+    height: 100%;
+    width: auto;
+    display: block;
+    
+    
+}
+
+
+
+footer{
+    color: #fff;
+    background: #2d3a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5rem 1rem 1rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 -2px 8px rgba(45,58,74,0.08);
+    
+}
+
+
+footer .iconos a {
+    margin: 0 0.5rem;
+    font-size: 1.7rem;
+    color: #4a90e2;
+    transition: color 0.2s, transform 0.2s;
+}
+footer .iconos a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+.footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+.imagenesMarcas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px; /* Espacio entre las imágenes */
+}
+.imagenesMarcas img{
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados opcional */
+    transition: transform
+
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border: 5px solid black;
+    height: 300px;
+
+}
+
+.item{
+    
+    border: 3px solid black;
+    height: auto;
+    width: 100px;
+}
+
+.Catalogo{
+    padding: 1rem;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo del catálogo */
+    margin: 0 auto; /* Centra el catálogo */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    box-shadow: 0 2px 16px rgba(45,58,74,0.20);
+}
+.producto{
+    border: 1px solid #333;
+    padding: 1rem;
+    background: #f5f6fa;
+    text-align: center;
+    border-radius: 8px;
+}
+.producto img{
+    width: 100%;
+    max-width: 180px;    /* Ajusta el tamaño máximo que prefieras */
+    height: 180px;       /* Todas las imágenes tendrán la misma altura */
+    object-fit:contain;   /* Ahora la imagen se ajusta y no se recorta */
+    margin: 0 auto 1rem auto;
+    display: block;
+    
+}
+
+.producto button{
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+.producto button:hover {
+    background: #2d3a4a;
+    transform: scale(1.04);
+}
+
+.grilla{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
+}
+
+
+.item2{
+    display: flex;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    
+}
+
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    background: #f7f7fa;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(45,58,74,0.08);
+    border: 1.5px solid #e0d7fa;
+}
+
+.formulario input, .formulario textarea {
+    background: #f5f6fa;         /* Cambia el color de fondo */
+    border: 2px solid #4a90e2;   /* Cambia el color y grosor del borde */
+    border-radius: 8px;          /* Bordes redondeados */
+    padding: 0.7rem 1rem;        /* Espaciado interno */
+    font-size: 1rem;             /* Tamaño de letra */
+    color: #2d3a4a;                 /* Color del texto */
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+.formulario input:focus, .formulario textarea:focus {
+    
+    border: 2px solid #2d3a4a;   /* Borde diferente al enfocar */
+    box-shadow: 0 0 0 2px #e0d7fa;
+}
+
+.formulario button{
+    background: #4a90e2;         /* Azul catálogo */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+
+
+.formulario button:hover {
+    background: #2d3a4a;         /* Azul oscuro al pasar el mouse */
+    transform: scale(1.04);
+}
+
+
+.mapa-container iframe{
+     border: 4px solid #4a90e2;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(45,58,74,0.12);
+    width: 90vw;
+    max-width: 600px;
+    height: 350px;
+    transition: box-shadow 0.3s;
+    background: #fff;
+}
+
+.mapa-container iframe:hover {
+    box-shadow: 0 8px 32px rgba(45,58,74,0.18);
+    border-color: #7b2ff2;
+}
+
+
+@media (max-width: 1200px) {
+    .Catalogo {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta el tamaño mínimo */
+        padding: 1rem; /* Espacio alrededor del catálogo */
+    }
+    .producto img {
+        max-width: 150px; /* Tamaño más pequeño para pantallas pequeñas */
+        height: 150px;    /* Mantiene la altura */
+    }
+}
+
+@media (max-width: 600px) {
+    .formulario {
+        max-width: 350px;      /* Tamaño chico */
+        width: 90%;            /* Un poco de flexibilidad */
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        gap: 0.8rem;
+        margin: 1.5rem auto;   /* Centrado y con espacio arriba/abajo */
+    }
+    .formulario button {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+}
+
+
+
+
+/*Hasta 768px */
+@media (max-width: 768px){
+    .headerContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .logo {
+        align-self: flex-start; /* Logo a la izquierda */
+        margin-left: 16px;
+        height: 50px;
+    }
+    .titulo {
+        width: 100%;           /* Ocupa todo el ancho */
+        text-align: center;     /* Centra el texto */
+        font-size: 1rem;
+        margin: 0;
+    }
+    .menu {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+}
