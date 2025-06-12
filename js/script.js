@@ -23,3 +23,9 @@ document.writeln(resultado);
 /*
 let resultado=confirm("Desea salir?");
 console.log(resultado);*/
+
+
+/*let numero= 3;
+console.log(isNaN(numero));*/
+
+console.log(5=="5");
