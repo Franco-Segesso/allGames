@@ -1,37 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumen de Compra</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>AllGames - Compra</title>
 </head>
 <body>
+    <header>
+        <div class="headerContainer">
+            <div class="logo">
+                    <img src="./img/logo.png" alt="Logo" width="30%">
+            </div>
 
-    <h1>Resumen de la compra</h1>
-    <main>
+            <div class="titulo">
+                    <h1>AllGames</h1>
+                    <h4>Lo mejor en cuanto a gaming</h4>
+            </div>
+        </div>
+        
+
+
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="Ubicacion.html">Ubicación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+     <main>
         <section>
             <div id="detalle"></div>
         </section>
-    </main>
+    
 
-    <footer></footer>
+     <form id="formulario" action="https://formspree.io/f/xdkgnozj" method="POST">
+    <input type="hidden" id="carritoData" name="carrito" />
+    <input type="hidden" id="totalCarrito" name="total" />
+    <input type="hidden" name="message" value="Confirmación de compra realizada.">
+   
 
-    <form id="formulario" action="acá pega tu dirección de FORMSPREE" method="POST">
-        <textarea id="carritoData" name="carrito" style="display:none;"></textarea>
-        <textarea id="totalCarrito" name="total" style="display:none;"></textarea>
-        <br>
-        <hr>
-        <label>Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
-        <label>Email:</label>
-        <input type="email" id="contactoEmail" name="email" placeholder="Correo electrónico" required>
-        <label>Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
-        <br><br>
-        <button type="submit" id="botonEnviar">Confirmar Compra</button>
+    
+    <label>Nombre completo</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+
+    <label>Email:</label>
+    <input type="email" id="contactoEmail" name="_replyto" placeholder="Correo electrónico" required>
+
+    <label>Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+
+    <br><br>
+    <button type="button" id="botonEnviar">Confirmar Compra</button>
     </form>
 
+    </main>
     <script src="./js/compra.js"></script>
 
+    <footer>
+        
+        <p>Desarrollador: Franco Segesso | <a href="mailto:fransege@gmail.com">Email: fransege@gmail.com</a></p>
+        <h4>Redes Sociales</h4>
+
+        <div class="iconos">
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </div>
+        <script src="./js/compra.js"></script>
+    </footer>
+
+    
+    
 </body>
 </html>

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia - Productos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -11,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="./css/styles.css">
+    <title>AllGames - Productos</title>
 </head>
 <body>
     <header>
@@ -34,6 +34,12 @@
                     <li><a href="Productos.html">Productos</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                     <li><a href="Ubicacion.html">Ubicación</a></li>
+                    <li>
+                        <a href="#" id="icono-carrito" class="carrito-icono">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="contador-carrito" class="contador-carrito">0</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -42,46 +48,94 @@
     <main>
         <h1>Productos</h1>
 
-        <div class="Catalogo">
-            <div class="producto">
-                <img src="./img/ps5.png" alt="ps5" width="100%">
-                <h2>Play Station 5</h2>
-                <p class="precio">$799.99</p>
-                <button class="btn">Comprar</button>
+        <div id="fakestore-container">
+            
+            <div class="card">
+                        <img src="./img/ps5.png" alt="ps5">
+                        <div class="card-content">
+                            <h3>Play Station 5</h3>
+                            <p>Precio: $799.99</p>
+                        </div>
+                        <button class="comprar-btn" onclick="agregarAlCarrito(101)">
+                            Añadir al carrito
+                        </button>
             </div>
-            <div class="producto">
-                <img src="./img/ps4.webp" alt="ps4" width="100%">
-                <h2>Play Station 4</h2>
-                <p class="precio">$499.99</p>
-                <button class="btn">Comprar</button>
+
+            <div class="card">
+                        <img src="./img/ps4.webp" alt="ps4">
+                        <div class="card-content">
+                            <h3>Play Station 4</h3>
+                            <p>Precio: $499.99</p>
+                        </div>
+                        <button class="comprar-btn" onclick="agregarAlCarrito(102)">
+                            Añadir al carrito
+                        </button>
             </div>
-            <div class="producto">
-                <img src="./img/joystick ps5.webp" alt="control ps5" width="100%">
-                <h2>Control ps5</h2>
-                <p class="precio">$79.99</p>
-                <button class="btn">Comprar</button>
+
+
+             <div class="card">
+                        <img src="./img/joystick ps5.webp" alt="control ps5">
+                        <div class="card-content">
+                            <h3>Control ps5</h3>
+                            <p>Precio: $79.99</p>
+                        </div>
+                        <button class="comprar-btn" onclick="agregarAlCarrito(103)">
+                            Añadir al carrito
+                        </button>
             </div>
-            <div class="producto">
-                <img src="./img/joystick ps4.png" alt="control ps4" width="100%">
-                <h2>Control ps4</h2>
-                <p class="precio">$59.99</p>
-                <button class="btn">Comprar</button>
+
+
+            <div class="card">
+                        <img src="./img/joystick ps4.png" alt="control ps4">
+                        <div class="card-content">
+                            <h3>Control ps4</h3>
+                            <p>Precio: $59.99</p>
+                        </div>
+                        <button class="comprar-btn" onclick="agregarAlCarrito(104)">
+                            Añadir al carrito
+                        </button>
             </div>
-            <div class="producto">
-                <img src="./img/nintendo switch.webp" alt="nintendo switch" width="100%">
-                <h2>Nintendo switch</h2>
-                <p class="precio">$300.00</p>
-                <button class="btn">Comprar</button>
+
+
+            <div class="card">
+                        <img src="./img/nintendo switch.webp" alt="nintendo switch">
+                        <div class="card-content">
+                            <h3>Nintendo switch</h3>
+                            <p>Precio: $300.00</p>
+                        </div>
+                        <button class="comprar-btn" onclick="agregarAlCarrito(105)">
+                            Añadir al carrito
+                        </button>
             </div>
-            <div class="producto">
-                <img src="./img/god of war.png" alt="god of war" width="100%">
-                <h2>God of War</h2>
-                <p class="precio">$99.99</p>
-                <button class="btn">Comprar</button>
+
+
+            <div class="card">
+                        <img src="./img/god of war.png" alt="god of war">
+                        <div class="card-content">
+                            <h3>God of War</h3>
+                            <p>Precio: $99.99</p>
+                        </div>
+                        <button class="comprar-btn" onclick="agregarAlCarrito(106)">
+                            Añadir al carrito
+                        </button>
             </div>
            
-            
         </div>
+        <!-- Modal del Carrito -->
+        <div id="modal-carrito" class="modal">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h2>Tu Carrito</h2>
+                <div id="lista-carrito"></div>
+                <div id="total-carrito">Total: $0.00</div>
+                <div class="botones-carrito">
+                    <button id="vaciar-carrito">Vaciar Carrito</button>
+                    <button id="pagar">Pagar</button>
+                </div>
+            </div>
+        </div>
+            
+        
 
 
         
@@ -91,7 +145,7 @@
     </main>
 
 
-
+    <script src="./js/carrito.js"></script>
     <footer>
         
         <p>Desarrollador: Franco Segesso | <a href="mailto:fransege@gmail.com">Email: fransege@gmail.com</a></p>

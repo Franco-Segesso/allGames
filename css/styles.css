@@ -50,6 +50,8 @@ main p {
     max-width: 700px;
     text-align: center;
     margin-bottom: 1.5rem;
+    justify-content: center;     /* Centrado horizontal */
+  align-items: center;
 }
 
 
@@ -61,7 +63,7 @@ header{
     top: 0;
     z-index: 1000; /* Para que quede por encima del resto */
     margin: 0;
-    padding: 0.3rem 0;
+    padding: 0.1 rem 0;
     
 
 }
@@ -75,14 +77,14 @@ header{
     top: 0px;
     box-sizing: border-box;
     margin: 0;
-    padding: 0.3 1rem;
+    padding: 0.1 0.5rem;
     
 }
 .titulo{
     grid-column: 1 / 4;
     grid-row: 1 / 2;
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 1rem;
     letter-spacing: 3px;
     font-family: "Bebas Neue", sans-serif;
     color: #4a90e2;
@@ -224,51 +226,7 @@ footer .iconos a:hover {
     width: 100px;
 }
 
-.Catalogo{
-    padding: 1rem;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px; /* Ancho máximo del catálogo */
-    margin: 0 auto; /* Centra el catálogo */
-    box-sizing: border-box; /* Incluye padding y border en el ancho total */
-    box-shadow: 0 2px 16px rgba(45,58,74,0.20);
-}
-.producto{
-    border: 1px solid #333;
-    padding: 1rem;
-    background: #f5f6fa;
-    text-align: center;
-    border-radius: 8px;
-}
-.producto img{
-    width: 100%;
-    max-width: 180px;    /* Ajusta el tamaño máximo que prefieras */
-    height: 180px;       /* Todas las imágenes tendrán la misma altura */
-    object-fit:contain;   /* Ahora la imagen se ajusta y no se recorta */
-    margin: 0 auto 1rem auto;
-    display: block;
-    
-}
 
-.producto button{
-    background: #4a90e2;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-    font-family: "Bebas Neue", sans-serif;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 0.5rem;
-    letter-spacing: 1px;
-}
-.producto button:hover {
-    background: #2d3a4a;
-    transform: scale(1.04);
-}
 
 .grilla{
     display: grid;
@@ -338,12 +296,21 @@ footer .iconos a:hover {
     transform: scale(1.04);
 }
 
+.mapa-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1rem; /* opcional */
+    box-sizing: border-box;
+}
+
 
 .mapa-container iframe{
      border: 4px solid #4a90e2;
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(45,58,74,0.12);
-    width: 90vw;
+    width: 100%;
     max-width: 600px;
     height: 350px;
     transition: box-shadow 0.3s;
@@ -412,3 +379,284 @@ footer .iconos a:hover {
     }
 
 }
+    #fakestore-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilos para cada tarjeta */
+.card {
+  display: flex; 
+  flex-direction: column; /* aplica los elementos verticalmente */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px;
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilos para la imagen del producto */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  background: #f8f8f8;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Estilos para el título del producto */
+.card-content h3 {
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+  
+}
+
+/* Estilos para el precio */
+.card-content p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Estilos para el contenido de la tarjeta */
+.card-content {
+  flex-grow: 1; /* Hace que este elemento ocupe todo el espacio disponible */
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+/* Estilos para el botón de compra */
+.comprar-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto; /* empuja el botón hacia la parte inferior */
+  transition: background-color 0.3s;
+  width: calc(100% - 10px);
+  margin: 10px 5px;
+  font-weight: bold;
+}
+
+.comprar-btn:hover {
+  background-color: #3f7dc8;
+}
+
+/* Estilos para el modal del carrito */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.modal-contenido {
+  background-color: #f8f8f8;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: modalopen 0.3s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0; transform: translateY(-50px)}
+  to {opacity: 1; transform: translateY(0)}
+}
+
+.cerrar-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cerrar-modal:hover {
+  color: #333;
+}
+
+.modal-contenido h2 {
+  color: #2d3a4a;
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+#lista-carrito {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 20px 0;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.item-carrito span:first-child {
+  flex: 2;
+}
+
+.item-carrito span:last-child {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+  color: #2d3a4a;
+}
+
+#total-carrito {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+  background-color: #e9f1fb;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.botones-carrito {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.botones-carrito button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#vaciar-carrito {
+  background-color: #e24a4a;
+  color: white;
+}
+
+#vaciar-carrito:hover {
+  background-color: #c63f3f;
+}
+
+#pagar {
+  background-color: #4a90e2;
+  color: white;
+}
+
+#pagar:hover {
+  background-color: #3f7dc8;
+}
+
+/* Estilos para el contador del carrito */
+.contador-carrito {
+  display: none;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrito-icono {
+  position: relative;
+}
+
+
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;     /* Centrado horizontal */
+  align-items: center;         /* Centrado vertical */
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+section,
+form#formulario {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+/* Lista de productos o detalle */
+#detalle {
+  min-height: 100px;
+}
+
+/* Formulario */
+form#formulario label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2d3a4a;
+  margin-top: 15px;
+}
+
+form#formulario input,
+form#formulario textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  border: 1px solid #2d3a4a;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: none;
+}
+
+#botonEnviar {
+    background: #4a90e2;         /* Azul catálogo */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+#botonEnviar:hover {
+    background: #2d3a4a;         /* Azul oscuro al pasar el mouse */
+    transform: scale(1.04);
+}
+
+
