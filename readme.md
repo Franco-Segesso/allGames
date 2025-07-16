@@ -1,1 +1,1 @@
-Esta es una web de aprendizaje sobre front que se va a basar en una tienda de tecnologia en la que se ofreceran productos relacionados al gaming.
+Esta es una pagina web de E-commerce usando las tecnologías de html, css, javascript. A modo de ejemplo, se consumio una API de una fake store para mostrar varios productos aunque algunos no tengan que ver con la identidad de la tienda. 
